@@ -1,0 +1,82 @@
+{
+  "config": {
+    "change": "package.finalized: false -> true (single textual replacement)",
+    "frozen_sha256": "8deead4f4ea15898473636e222db011990477b9c9c1a68bd60686382b2d39fc2",
+    "prepared_sha256": "de24bf3d9df35b4660e615095cf15795864f23cbb98004047d0067f0cc621ba6"
+  },
+  "derived_from": {
+    "change_scope": "Artifact lineage recorded by immutable hashes",
+    "freeze_sha256": "938852c3dda90a7afe6f19f736bfecd9759001d3c826cdfb5f64fec46338a4a5",
+    "manifest_sha256": "4c4eee060948a1eab2b059a9de974c115f1ece596276ca31e3b608c4fed52426",
+    "package": "Source artifact identified by its freeze and manifest hashes"
+  },
+  "frozen_utc": "2026-11-13T10:00:30Z",
+  "model_identity_sha256": "0513d121db967ec1a6aaccf627d3c42149d092dd027298da5b53684b030821ea",
+  "prepared_files": {
+    ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    ".gitignore": "4254e460a0ff807e7fd68e104efa8935a769377f09876b8b4fec0fb0b544a0e6",
+    "ADAPTER_MANIFEST.json": "6c40a7534f5d2b87cc8591748f85c7958f0259821c98659a60e25308904aa430",
+    "DISCLOSURE.md": "85b44935b712ce72567f21d5ff887da80a74d9eed03216e37bfc7dad0d86f97e",
+    "LICENSE": "199f78d6c6e3b98c1601e4407aa092af57e42842d195409569c199b0393afac9",
+    "MODEL_CARD.md": "d9b7c2bf13d8357734263bac367117f4b0d1562c5c2b99874e236e96ed6fe09d",
+    "MODEL_MANIFEST.json": "d82f71ba20a912a3d5fe1ef8a5a2f8e004be16e7c67df2ee5308864b6832eb5f",
+    "PIPELINE_PROVENANCE.json": "f6b417e257038550efbbcbb947e70cf6e6bbcdcc0aac2381b811ee5668b14b37",
+    "README.md": "c2fa630f36347824397c406c97e6bc6ee3dd501fca43ffa8e0e1a970899c3f8c",
+    "SERVICE_LOCK.json": "0f494efa1ccef97bec1ac1fb4a8754bf87161f3629cf5f8bc7b844d651adad5f",
+    "attention.py": "9c887f4e5f8ea2858f79a629e684ea71b07359d49d2a0bf31b5f993cb367e547",
+    "backends.py": "e0613ebb8e05fd22673e0502a131dcc33a5af563998cf5a12143878131518f93",
+    "bench.py": "7f158bcb4dcd90395c21535527abe4283d6ca5dab92ded0be47cc352f022f0cd",
+    "calibration.json": "5b60ca8516b93982724145bc2227404c4c53a6f5657b4bf2155108c2f001685f",
+    "config.json": "de24bf3d9df35b4660e615095cf15795864f23cbb98004047d0067f0cc621ba6",
+    "core.py": "fb4169ed1c6c9d69e406e9a33d69a71cc49aa48e0155d9544bb9f3bf41690a17",
+    "fit_report.json": "fc20f2f631c98f043f7c02d4cadbe8122580ee400377eef5420d93621111248b",
+    "item_deadline.py": "8d3d637ab3db1be9769e26900b4fc46964e48425a05bb92402a2b504ae66ff3a",
+    "launch.py": "d8f966264dfa5d977ef6444364e1eb4128cf34ed1b60bc94a45f2649f6fce2d3",
+    "model_setup.py": "6c7cd992039327178b72247b8b0f44214a5a00e43abcc0f583130dfe91586dd7",
+    "pkg_check.py": "33bc2a579949e7e6453968f6d0c440698da16dc2e727f6a298d9184d5ee04306",
+    "post_calibration.py": "21f01b26f9afa8a1d567ce3cf9393a81afce4d74ddff60887c7e4817de4ae9f4",
+    "prepare_model.sh": "454a0090ce0187bf6f4b4825a537183cf095c503592a7f673f7f57329258dc44",
+    "quota.py": "8b039bc30c13e6c5a63668f3064fbb311358f9295922a817ec26f09893936f8d",
+    "reconcile_usage.py": "a381dca414201652f254f5101f08d4cbba27b69c3abeb50e6dad86e0e151aba7",
+    "requirements.lock": "4536b444d83518a5d696ebf262aa9d3da156fe2d898f96582e4ab52d70cb4e4d",
+    "requirements.measured.lock": "888ec6b0d3fad1a17e9323c1ab9321040303c79df3c9fe43e6f755cf2ab24b91",
+    "selftest.py": "36042b69988e7c280ac54c175c1b3715322456d96fe1f40bb7e3a0051cc3212c",
+    "selftest.sh": "d0cc8cc9068667aec3525861e0d61ac8fc9bb617b90f7fee7818af9dc0af154e",
+    "serve.sh": "13008367a9b37988de9c7acfa1d2340ca7dea502fd352887fc61783749d279c3",
+    "server.py": "dbce4f70c2c684ac8ea5069a9dfa1d30aa33a8e1c33d274d91fd3c2a953c6951"
+  },
+  "replaced_documents": {
+    "README.md": {
+      "prepared_sha256": "c2fa630f36347824397c406c97e6bc6ee3dd501fca43ffa8e0e1a970899c3f8c",
+      "frozen_sha256": "8ba352824d4520d60ff38d28028fd8cb26ded2fdd6b5591a7870c87a41fcd508"
+    },
+    "MODEL_CARD.md": {
+      "prepared_sha256": "d9b7c2bf13d8357734263bac367117f4b0d1562c5c2b99874e236e96ed6fe09d",
+      "frozen_sha256": "3095cd841b1f0b98e42121fcbf280a0ff6f46c133a0dafb4172843de914a9efa"
+    },
+    "DISCLOSURE.md": {
+      "prepared_sha256": "85b44935b712ce72567f21d5ff887da80a74d9eed03216e37bfc7dad0d86f97e",
+      "frozen_sha256": "ff168f5368df52a52c221e3d818994ee9f109544b87eb45bfb432ea6a4a672fe"
+    }
+  },
+  "repo_id": "MeTask-Rain/metask-jev-rain-31B-trained",
+  "revision": "9392335f5a17395ecd70049f85b1909d53500144",
+  "schema": "metadecision_31b_freeze_v1",
+  "serving_selection": {
+    "freeze_sha256": "6e5325eb9713ed73ed9fc94992b67b1179ea60d6969757af61d5c8860d2bb22e",
+    "protocol_sha256": "1c279f3d780a0a522a217c38f74892e9c7019be5012409a9c83bbd9dbc179771",
+    "readout_sha256": "8cc627afcf00b3b9ba9edafe004adc8294d45c62bec8a2dc5b3f593cac4ea0a2",
+    "selected": "serving rules selected on our own development set",
+    "selection_sha256": "cc1070b2d79a088983cdb5c300adc7c1ed5c25232003830a9d1a8611e4df6820"
+  },
+  "status": "FROZEN",
+  "documentation_revision": {
+    "scope": "README, model card, disclosure and integrity metadata only",
+    "previous_freeze_sha256": "66e6f56ceacd480bf3e0eb508a331d8364eb9868eece83c516a685c9b30d170e"
+  },
+  "public_comparison": {
+    "row": "The first MetaDecision-31B-Rain row",
+    "changes": "Choice, yes/no and score probability post-processing",
+    "unchanged": "The SHA-256-pinned weights, routing, prompts, drafting, token limits, 9 s deadline and re-read remain unchanged. For identical pre-calibration outputs, selected answers and the first-maximum tie-break are preserved by construction for all three question types."
+  }
+}

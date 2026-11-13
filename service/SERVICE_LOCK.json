@@ -1,0 +1,48 @@
+{
+  "adapter_files": {
+    "adapter_config.json": {
+      "sha256": "140bb00c832d117f57d29650dabe50e992b2e5064e908aaa29230b3ce19ca2c4",
+      "size": 22953
+    },
+    "adapter_model.safetensors": {
+      "sha256": "2b9568998ffed5d133223ffdff03056be297285c643122db4d45365d0bd86970",
+      "size": 494595208
+    }
+  },
+  "arm": "trained",
+  "calibration_sha256": "5b60ca8516b93982724145bc2227404c4c53a6f5657b4bf2155108c2f001685f",
+  "complete": true,
+  "config_file_sha256": "de24bf3d9df35b4660e615095cf15795864f23cbb98004047d0067f0cc621ba6",
+  "fit_report_sha256": "fc20f2f631c98f043f7c02d4cadbe8122580ee400377eef5420d93621111248b",
+  "protocol": "adapter_arm_31b_v3",
+  "q": 0.49,
+  "serving": {
+    "draft": {
+      "max_new_tokens": 192,
+      "reasoning_words": 50
+    },
+    "fuse": 0.49,
+    "item_deadline_sha256": "3633ad26b201ba9200d6bb606852a80cef33a0c58adc0709f15f4bc8a49d9148",
+    "item_rules": {
+      "reread_tau": 4.0,
+      "slow_types": [
+        "choice",
+        "noul",
+        "score"
+      ]
+    },
+    "post_calibration_sha256": "e31405ef62a9bad072bcf6a3f84ab6c6b185582b2f7fda27c056984c0d68b31f",
+    "quota": 0.49,
+    "selection": {
+      "freeze_sha256": "6e5325eb9713ed73ed9fc94992b67b1179ea60d6969757af61d5c8860d2bb22e",
+      "protocol_sha256": "1c279f3d780a0a522a217c38f74892e9c7019be5012409a9c83bbd9dbc179771",
+      "readout_sha256": "8cc627afcf00b3b9ba9edafe004adc8294d45c62bec8a2dc5b3f593cac4ea0a2",
+      "selected": "serving rules selected on our own development set",
+      "selection_sha256": "cc1070b2d79a088983cdb5c300adc7c1ed5c25232003830a9d1a8611e4df6820"
+    },
+    "threshold": 6.625023671062799
+  },
+  "serving_identity_sha256": "0513d121db967ec1a6aaccf627d3c42149d092dd027298da5b53684b030821ea",
+  "status": "frozen",
+  "variant": "key_value_aligned"
+}

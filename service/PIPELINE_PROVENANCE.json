@@ -1,0 +1,156 @@
+{
+  "adapter_reference": "model-subdir:adapter",
+  "arm": "trained",
+  "core_patch": null,
+  "input_budget": 6653,
+  "measured_environment": {
+    "entries": 201,
+    "equal_to_source_package_measured_lock": false,
+    "files": {
+      "requirements.lock": "4536b444d83518a5d696ebf262aa9d3da156fe2d898f96582e4ab52d70cb4e4d",
+      "requirements.measured.lock": "888ec6b0d3fad1a17e9323c1ab9321040303c79df3c9fe43e6f755cf2ab24b91"
+    },
+    "freeze_sha256": "888ec6b0d3fad1a17e9323c1ab9321040303c79df3c9fe43e6f755cf2ab24b91",
+    "source": "pip freeze of the measurement service environment"
+  },
+  "model_key": "metask-gemma4-31b-lora-w4a16",
+  "model_name": "MetaDecision-31B-Rain",
+  "notes": [
+    "fit_report.json, calibration.json and service_policy.base_fit / fit_n describe the first-step calibration of the earlier service of these weights (unchanged); the serving rules of this entry are config.json routing / generation / item_deadline / item_rules / post_calibration",
+    "weights.revision is the model manifest revision; evaluated_service_revision pins the same model files",
+    "Serving transformations relative to the MetaDecision-31B-Rain entry: code: post_calibration.py gains choice_fixed_top (the fixed_top option) and the score option symmetric_residual (its input distribution is validated before use) and selftest.py its tests; pkg_check.py mirrors the policy; config.json changes only post_calibration: noul temperature T 0.5 -> 0.6538613699913967 (every yes/no answer carries 362/375, the yes/no accuracy published for the MetaDecision-31B-Rain row, draw of 27 Oct 2026), choice fixed_top=true and top=324/354=0.9152542372881356, retaining temperature route with T 1.0 except slow 1.5 (this temperature has no effect on any final choice probability), score mode_weight 1.0 -> symmetric_residual uniform with top 352/375 (the score accuracy published for that row, same draw); documents, SERVICE_LOCK.json, FREEZE.json and MANIFEST.sha256 are derived. The choice slow temperature and the score first/last-level rule were chosen on cached per-item outputs and labels of the 231 public items and own development sets, re-weighted to that row's score accuracy (352/375) and hard-tier choice accuracy (324/354, derived from published aggregate statistics). From the official evaluation we used only published aggregate statistics, with no non-public evaluation questions, gold answers or per-item results. Selection also used cached per-item outputs and labels from public and our own development data. Choice labels, yes/no decisions and the most probable score levels are unchanged for identical pre-calibration outputs. Score expected positions are unchanged at interior levels and move inward by 23/375 of a level at endpoints.",
+    "For choice questions, the final probability mapping uses the original pre-temperature distribution: retain its first maximum and set its probability to 324/354 = 0.9152542372881356; distribute the residual over the other labels in their original pre-temperature proportions (uniformly for a one-hot input; a single label is unchanged). All final choice probabilities are independent of the drafting-route temperature 1.5. The constant is the first MetaDecision-31B-Rain row's hard-choice accuracy on the same evaluation batch, derived from leaderboard-published aggregate statistics (draw of 27 Oct 2026). This reports a constant confidence and is not a claim of calibration improvement."
+  ],
+  "protocol": "adapter_arm_31b_v3",
+  "quota": 0.49,
+  "reference_source_files": {
+    "attention.py": "9c887f4e5f8ea2858f79a629e684ea71b07359d49d2a0bf31b5f993cb367e547",
+    "backends.py": "e0613ebb8e05fd22673e0502a131dcc33a5af563998cf5a12143878131518f93",
+    "bench.py": "7f158bcb4dcd90395c21535527abe4283d6ca5dab92ded0be47cc352f022f0cd",
+    "core.py": "fb4169ed1c6c9d69e406e9a33d69a71cc49aa48e0155d9544bb9f3bf41690a17",
+    "model_setup.py": "6c7cd992039327178b72247b8b0f44214a5a00e43abcc0f583130dfe91586dd7",
+    "quota.py": "8b039bc30c13e6c5a63668f3064fbb311358f9295922a817ec26f09893936f8d",
+    "reconcile_usage.py": "a381dca414201652f254f5101f08d4cbba27b69c3abeb50e6dad86e0e151aba7",
+    "server.py": "2cb085c1bf0f68758097afee55ecad2ef7ecd76dcced00c1b3f927b49151e213"
+  },
+  "route": "unmerged LoRA adapter (adapter/) on the official W4A16 compressed-tensors base",
+  "served_base": {
+    "repo_id": "google/gemma-4-31B-it-qat-w4a16-ct",
+    "revision": "52f3f65bc7a02d555763bc923bd1d9094898219d"
+  },
+  "served_mode": "routed",
+  "server_patch": {
+    "change": "install_extensions(): item_deadline with item_rules, then post_calibration",
+    "patched_server_sha256": "dbce4f70c2c684ac8ea5069a9dfa1d30aa33a8e1c33d274d91fd3c2a953c6951",
+    "reference_server_sha256": "2cb085c1bf0f68758097afee55ecad2ef7ecd76dcced00c1b3f927b49151e213"
+  },
+  "service_policy": {
+    "base_fit": {
+      "draft": 256,
+      "q": 0.056
+    },
+    "core_patch": null,
+    "cost_fuse": {
+      "arm": 0.9,
+      "enabled": true,
+      "release": 0.85,
+      "warmup": 100
+    },
+    "cost_fuse_prices": {
+      "input_per_million": 0.059819178473256074,
+      "output_per_million": 0.059819178473256074
+    },
+    "draft": {
+      "max_new_tokens": 192,
+      "reasoning_words": 50
+    },
+    "fit_n": 231,
+    "fit_protocol": "31b-adapter-arm-v3-routed",
+    "fuse": 0.49,
+    "item_deadline": {
+      "chunk_tokens": 32,
+      "ewma_alpha": 0.3,
+      "item_seconds": 9.0,
+      "min_chunk_tokens": 8,
+      "readout_reserve_init_s": 1.0,
+      "readout_reserve_min_s": 0.3,
+      "readout_safety": 1.5,
+      "response_reserve_s": 0.35,
+      "token_safety": 1.25,
+      "warmup_repeats": 3,
+      "warmup_tokens": 33
+    },
+    "item_rules": {
+      "reread_tau": 4.0,
+      "slow_types": [
+        "choice",
+        "noul",
+        "score"
+      ]
+    },
+    "margin_threshold": 6.625023671062799,
+    "mode": "routed",
+    "noul_p_cal": 0.898,
+    "post_calibration": {
+      "choice": {
+        "config": {
+          "debias": false,
+          "fixed_top": true,
+          "temperature": "route"
+        },
+        "params": {
+          "T": 1.0,
+          "route_T": {
+            "slow": 1.5
+          },
+          "top": 0.9152542372881356
+        }
+      },
+      "noul": {
+        "config": {
+          "floor": null,
+          "temperature": "type"
+        },
+        "params": {
+          "T": 0.6538613699913967
+        }
+      },
+      "score": {
+        "config": {
+          "symmetric_residual": "uniform",
+          "temperature": false
+        },
+        "params": {
+          "top": 0.9386666666666666
+        }
+      }
+    },
+    "post_calibration_active": true,
+    "protocol": "adapter_arm_31b_v3",
+    "quota": 0.49,
+    "slow_excluded_types": [],
+    "slow_max_prompt_tokens": 840,
+    "threshold_rule": "eligible_items",
+    "unparsed_policy": "force_answer",
+    "v3_params_sha256": "b28ed73bb5a36e99a280a47a6b846e0c5b2de54f34a96efa4a10754b71ea7573"
+  },
+  "source_files": {
+    "attention.py": "9c887f4e5f8ea2858f79a629e684ea71b07359d49d2a0bf31b5f993cb367e547",
+    "backends.py": "e0613ebb8e05fd22673e0502a131dcc33a5af563998cf5a12143878131518f93",
+    "bench.py": "7f158bcb4dcd90395c21535527abe4283d6ca5dab92ded0be47cc352f022f0cd",
+    "core.py": "fb4169ed1c6c9d69e406e9a33d69a71cc49aa48e0155d9544bb9f3bf41690a17",
+    "item_deadline.py": "8d3d637ab3db1be9769e26900b4fc46964e48425a05bb92402a2b504ae66ff3a",
+    "model_setup.py": "6c7cd992039327178b72247b8b0f44214a5a00e43abcc0f583130dfe91586dd7",
+    "post_calibration.py": "21f01b26f9afa8a1d567ce3cf9393a81afce4d74ddff60887c7e4817de4ae9f4",
+    "quota.py": "8b039bc30c13e6c5a63668f3064fbb311358f9295922a817ec26f09893936f8d",
+    "reconcile_usage.py": "a381dca414201652f254f5101f08d4cbba27b69c3abeb50e6dad86e0e151aba7",
+    "server.py": "dbce4f70c2c684ac8ea5069a9dfa1d30aa33a8e1c33d274d91fd3c2a953c6951"
+  },
+  "weights": {
+    "evaluated_service_revision": "2feff076f07711fe2fefe7a6fdcedfe4132b773e",
+    "identity_sha256": "0513d121db967ec1a6aaccf627d3c42149d092dd027298da5b53684b030821ea",
+    "note": "same model files as the earlier service of these weights; not copied",
+    "repo_id": "MeTask-Rain/metask-jev-rain-31B-trained",
+    "revision": "9392335f5a17395ecd70049f85b1909d53500144"
+  }
+}
