@@ -70,8 +70,8 @@ The instructions under `service/` belong to the frozen package and keep `CODE_CO
 Use one Bash terminal in a writable parent directory, with Git, Python, the `hf` download tool, Docker and NVIDIA Container Toolkit installed on the host. The publisher records the code commit and service repository revision below; both fields are empty until publication. They must contain the actual 40-character identities in the released instructions. Use a fresh parent directory for each run. The single-GPU 80 GB configuration below remains unverified for this release.
 
 ```bash
-CODE_COMMIT=''
-HF_SERVICE_REVISION=''
+CODE_COMMIT='d31313238e4cbe5584253971aec5370e4929a2a0'
+HF_SERVICE_REVISION='0205a1c3994cf1201a4f8595621b2ee8bb2ea9d3'
 MODEL_REVISION=2feff076f07711fe2fefe7a6fdcedfe4132b773e
 HARNESS_COMMIT=bb05a335bc809e61b20c0f745d25499a82b326fc
 IMAGE=vllm/vllm-openai@sha256:a4a4c0437bf7240089da5f08aa370c4aee17ae5290f7a3b468825ee26c4c3a6b
