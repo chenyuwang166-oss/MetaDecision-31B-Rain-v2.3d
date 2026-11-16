@@ -21,8 +21,6 @@
 - Some serving parameters were fitted or chosen using the 231 public JevBench items; fits on these
   items are in-sample. The other serving parameters were fitted on our own development data.
 
-- Published aggregate statistics from the official leaderboard were used to choose serving parameters. No non-public evaluation questions, gold answers or per-item results were used.
-
 ## Usage accounting
 
 - The token usage reported for each decision is the engine's measured token count (cached prefix
