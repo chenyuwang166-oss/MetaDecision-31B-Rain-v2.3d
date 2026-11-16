@@ -64,40 +64,12 @@ FREEZE_DOCUMENTS=('README.md','DISCLOSURE.md','MODEL_CARD.md')
 CONFIG_CHANGE='package.finalized: false -> true (single textual replacement)'
 FROZEN_FLAG,PREPARED_FLAG=b'"finalized": true',b'"finalized": false'
 TEXT_SUFFIXES=('.py','.md','.json','.sh','.lock','.txt')
-def percent(value):
-    """'6%' for 0.06, '2.5%' for 0.025, '6.25%' for 0.0625: the service's quota and fuse lines as written in the
-    documents, exact (never rounded)."""
-    from decimal import Decimal
-    text=format((Decimal(repr(float(value)))*100).normalize(),'f')
-    return (text.rstrip('0').rstrip('.') if '.' in text else text)+'%'
-
-def policy_disclosure(policy):
-    """Policy facts DISCLOSURE.md must state: the yes/no constant; routed: the drafting pass, its quota, budget,
-    prompt limit, 60 s limit and the cost-fuse lines."""
-    if not policy:return ()
-    items=('%.3f'%policy['noul_p_cal'],)
-    if policy['mode']!='routed':return items
-    pct=percent(policy['quota'])
-    items+=('drafting pass','slow-path quota '+pct,'at most '+pct+' of all decisions',
-            'at most %d tokens'%policy['draft']['max_new_tokens'],
-            'longer than {:,} tokens'.format(policy['slow_max_prompt_tokens']),
-            'deadline of %s s'%format(policy['item_deadline']['item_seconds'],'g'),'Cost fuse',
-            percent(policy['cost_fuse']['arm']),percent(policy['cost_fuse']['release']))
-    rules=policy.get('item_rules') or {}
-    if rules.get('reread_tau'):items+=('reverse order','below %s'%format(rules['reread_tau'],'g'))
-    if set(rules.get('slow_types') or KINDS)!=set(KINDS):items+=('only these question types',)
-    if policy.get('post_calibration_active'):items+=('Post-calibration',)
-    return items
-
-# Necessary disclosure: base repo@revision, own weights, quantization, unmerged adapter,
-# input budget and the cost/latency measurement conditions, plus the policy facts.
+# Necessary disclosure: base repo@revision attribution and the unmerged adapter.
 DISCLOSURE_REQUIRED=(PRICING_BASE,TRAINING_BASE,TRAINING_REVISION,SERVED_BASE,SERVED_REVISION,
-                     'rank 16','alpha 32','W4A16','not merged','max_lora_rank=16','6,653',
-                     'VLLM_BATCH_INVARIANT=1','engine token')+policy_disclosure(SERVICE_POLICY)
-# README requirements: tested GPU and memory, the adapter route's vLLM options, the download tool, the mode.
-README_REQUIRED=('NVIDIA A100 80GB','gpu_memory_utilization=0.94','max_model_len=6656','enable_lora',
-                 'max_lora_rank=16','The model files take','`hf`','hf download')+(
-                 ('`"mode": "%s"`'%SERVED_MODE,) if SERVED_MODE else ())
+                     'not merged')
+# README requirements: tested GPU and memory, the adapter route's vLLM options and the download tool.
+README_REQUIRED=('two NVIDIA RTX 4090','gpu_memory_utilization=0.94','max_model_len=6656','enable_lora',
+                 'max_lora_rank=16','The model files take','`hf`','hf download')
 
 def read(name):
     return json.loads((ROOT/name).read_text(encoding='utf-8'))

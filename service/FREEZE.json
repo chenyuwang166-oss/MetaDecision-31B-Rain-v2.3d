@@ -33,7 +33,7 @@
     "item_deadline.py": "8d3d637ab3db1be9769e26900b4fc46964e48425a05bb92402a2b504ae66ff3a",
     "launch.py": "d8f966264dfa5d977ef6444364e1eb4128cf34ed1b60bc94a45f2649f6fce2d3",
     "model_setup.py": "6c7cd992039327178b72247b8b0f44214a5a00e43abcc0f583130dfe91586dd7",
-    "pkg_check.py": "33bc2a579949e7e6453968f6d0c440698da16dc2e727f6a298d9184d5ee04306",
+    "pkg_check.py": "7eb9e8dc584e34437b98ae09c99595687de19f910243b0441bfad56470d6a600",
     "post_calibration.py": "21f01b26f9afa8a1d567ce3cf9393a81afce4d74ddff60887c7e4817de4ae9f4",
     "prepare_model.sh": "454a0090ce0187bf6f4b4825a537183cf095c503592a7f673f7f57329258dc44",
     "quota.py": "8b039bc30c13e6c5a63668f3064fbb311358f9295922a817ec26f09893936f8d",
@@ -48,15 +48,15 @@
   "replaced_documents": {
     "README.md": {
       "prepared_sha256": "c2fa630f36347824397c406c97e6bc6ee3dd501fca43ffa8e0e1a970899c3f8c",
-      "frozen_sha256": "8ba352824d4520d60ff38d28028fd8cb26ded2fdd6b5591a7870c87a41fcd508"
+      "frozen_sha256": "3c151b15b2a2cd1ef455032a38d47f60186954ecfb285e8ef9310f3f55ad64f5"
     },
     "MODEL_CARD.md": {
       "prepared_sha256": "d9b7c2bf13d8357734263bac367117f4b0d1562c5c2b99874e236e96ed6fe09d",
-      "frozen_sha256": "3095cd841b1f0b98e42121fcbf280a0ff6f46c133a0dafb4172843de914a9efa"
+      "frozen_sha256": "938362b92d06e0b4c3e61d62b522b5bf6dfd84165a9fda6b0cacb5aa15e2fbdd"
     },
     "DISCLOSURE.md": {
       "prepared_sha256": "85b44935b712ce72567f21d5ff887da80a74d9eed03216e37bfc7dad0d86f97e",
-      "frozen_sha256": "ff168f5368df52a52c221e3d818994ee9f109544b87eb45bfb432ea6a4a672fe"
+      "frozen_sha256": "4057c898d75cb94a149c9e1c1ffc0a9a840f2c2034631e408a6a5bba28cf935a"
     }
   },
   "repo_id": "MeTask-Rain/metask-jev-rain-31B-trained",
